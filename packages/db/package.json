@@ -12,6 +12,9 @@
   "dependencies": {
     "@prisma/client": "^5.19.0"
   },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
   "exports": {
     "./client": "./index.ts"
   }
