@@ -23,7 +23,7 @@ export async function p2ptransfer(to: string, amount: number) {
         return { error: "User not found" }
     }
 
-    await db.$transaction( async (tx)=>{
+    await db.$transaction( async (tx: any)=>{
         tx.$queryRaw`SELECT * FROM BALANCE WHERE userId = $(parseInt(from)) FOR UPDATE`
         const fromBalance = await tx.balance.findUnique({
             where: {
